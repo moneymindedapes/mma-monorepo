@@ -1,0 +1,22 @@
+{
+  "name": "mint-box",
+  "version": "0.0.1",
+  "description": "Fastify server for an XRP mint actor.",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo 'implement tests'"
+  },
+  "keywords": [
+    "actor",
+    "xrp",
+    "mint",
+    "nfts"
+  ],
+  "author": "Justin Shaw",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "4.26.0",
+    "hyper-async": "1.1.2"
+  }
+}
