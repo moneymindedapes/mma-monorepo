@@ -1,10 +1,9 @@
-import Fastify from "fastify";
+import Fastify from 'fastify';
+import health from './routes/health.js';
 
-const fastify = new Fastify({ logger: true })
+const fastify = new Fastify({ logger: true });
 
-fastify.get('/', async (request, reply) => {
-  return { hello: 'world' };
-});
+fastify.register(health, { prefix: '/v1' });
 
 // Start the server
 const start = async () => {
