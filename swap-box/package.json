@@ -5,8 +5,9 @@
   "description": "Swapping built on top of the actor model.",
   "main": "main.js",
   "scripts": {
+    "install": "npm i --omit=dev",
     "test": "echo 'implement me'",
-    "start": "NODE_OPTIONS=--max-old-space-size=8192 node ./server.js"
+    "start": "npm i && NODE_OPTIONS=--max-old-space-size=8192 node ./server.js"
   },
   "author": "Justin Shaw",
   "license": "ISC",
