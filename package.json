@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "start:swap-box": "(cd swap-box && npm start)"
+  }
+}
