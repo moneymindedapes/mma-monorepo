@@ -14,7 +14,7 @@ fastify.register(health);
 // Start the server
 const start = async () => {
   try {
-    await fastify.listen(process.env.PORT);
+    await fastify.listen(process.env.PORT, '0.0.0.0');
     fastify.log.info(`Server listening on ${fastify.server.address().port}`);
   } catch (err) {
     fastify.log.error(err);
