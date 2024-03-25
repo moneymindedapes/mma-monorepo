@@ -1,5 +1,6 @@
 import Fastify from 'fastify';
 import health from './routes/health.js';
+import coov from './routes/coov.js';
 
 if (!process.env.PORT) {
   throw new Error(
@@ -10,10 +11,21 @@ if (!process.env.PORT) {
 const fastify = new Fastify({ logger: true });
 const baseOptions = {
   private_key: process.env.PRIVATE_KEY || 'set PRIVATE_KEY in your environment',
+  mongo_key: process.env.MONGO_KEY || 'set MONGO_KEY in your environment',
 };
 
 fastify.register((fastify, options, done) => {
   return health(
+    fastify,
+    {
+      ...baseOptions,
+      ...options,
+    },
+    done
+  );
+});
+fastify.register((fastify, options, done) => {
+  return coov(
     fastify,
     {
       ...baseOptions,
