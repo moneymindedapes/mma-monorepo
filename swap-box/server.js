@@ -8,8 +8,20 @@ if (!process.env.PORT) {
 }
 
 const fastify = new Fastify({ logger: true });
+const baseOptions = {
+  private_key: process.env.PRIVATE_KEY || 'set PRIVATE_KEY in your environment',
+};
 
-fastify.register(health);
+fastify.register((fastify, options, done) => {
+  return health(
+    fastify,
+    {
+      ...baseOptions,
+      ...options,
+    },
+    done
+  );
+});
 
 // Start the server
 const start = async () => {

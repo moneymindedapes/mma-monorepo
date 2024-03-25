@@ -26,6 +26,7 @@ const main = ({ l }) => {
  * @param {import('fastify').FastifySchema} opts - Options for the route.
  */
 export default async function (app, opts, third) {
+  console.log('OPTIONS', opts);
   /**
    * GET /v1/users
    * Fetches users.
